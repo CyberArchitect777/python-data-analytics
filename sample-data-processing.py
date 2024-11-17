@@ -32,6 +32,8 @@ f1data = pandas.read_excel("2023f1data.xlsx")
 
 print(f1data.to_string())
 
+#### Series - One-dimensional ####
+
 # Create Series and print. One dimensional data
 
 row_data = [1, 4, 2]
@@ -49,3 +51,21 @@ print(row["One"]) # Print out data for one label
 test_row = pandas.Series(test_data, index=["name"])
 
 print(test_row.to_string())
+
+#### DataFrame Two-dimensional ####
+
+# Load test_data into a DataFrame
+data_frame = pandas.DataFrame(test_data)
+
+print("-----")
+#print(data_frame)
+print(data_frame.loc[1]) # Print out information row. Provides additional information
+print(data_frame.loc[[0, 1]]) # Print out more than one row.
+
+# Names records in the DataFrame
+named_data_frame = pandas.DataFrame(test_data, index = ["record1", "record2", "record3"])
+
+print(named_data_frame)
+
+# Print out only one named record
+print(named_data_frame.loc["record2"])
